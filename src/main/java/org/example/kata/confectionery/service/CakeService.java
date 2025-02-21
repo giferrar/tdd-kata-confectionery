@@ -6,8 +6,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CakeService implements ICakeService {
 
-    private CakeRepository cakeRepository;
+    private final CakeRepository cakeRepository;
 
+    public CakeService(CakeRepository cakeRepository) {
+        this.cakeRepository = cakeRepository;
+    }
 
 
 }
