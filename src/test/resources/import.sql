@@ -1,4 +1,4 @@
-INSERT INTO CAKE (id, name, ingredients, calories, salty)
+INSERT INTO CAKE (id, name, ingredients, calories)
 VALUES (1, 'Chocolate Cake', 'flour,eggs,butter,sugar,chocolate', 488),
        (2, 'Apple Cake', 'flour,eggs,butter,sugar,apples,lemon', 298),
        (3, 'Tiramisu', 'mascarpone,eggs,sugar,savoiardi,coffee', 670),
