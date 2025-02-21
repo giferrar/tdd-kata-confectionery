@@ -24,6 +24,6 @@ public class CakeService implements ICakeService {
 
     @Override
     public List<Cake> findCakeByIngredientsContaining(String ingredient) {
-        return List.of(cakeRepository.findById(3L).get());
+        return cakeRepository.findAllByIngredientsContaining(ingredient);
     }
 }
