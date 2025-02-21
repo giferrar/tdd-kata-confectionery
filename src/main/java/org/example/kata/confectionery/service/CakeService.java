@@ -29,6 +29,8 @@ public class CakeService implements ICakeService {
 
     @Override
     public void bakeCake(Cake cake) {
-        throw new RuntimeException("Name is mandatory");
+        if (cake.getName() == null || cake.getName().isEmpty()) {
+            throw new RuntimeException("Name is mandatory");
+        }
     }
 }
