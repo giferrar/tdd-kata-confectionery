@@ -46,4 +46,12 @@ class CakeServiceTest {
         assertTrue(cakes.isEmpty());
     }
 
+    @Test
+    void when_bake_cake_with_no_name_then_throw_exception() {
+        Cake cake = new Cake();
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> this.service.bakeCake(cake));
+
+        assertEquals("Name is mandatory", exception.getMessage());
+    }
+
 }
