@@ -1,5 +1,6 @@
 package org.example.kata.confectionery.service;
 
+import org.example.kata.confectionery.persistence.model.Cake;
 import org.example.kata.confectionery.persistence.repository.CakeRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,4 +14,10 @@ public class CakeService implements ICakeService {
     }
 
 
+    @Override
+    public Cake getCake(long l) {
+        Cake cake = new Cake();
+        cake.setId(1L);
+        return cake;
+    }
 }
