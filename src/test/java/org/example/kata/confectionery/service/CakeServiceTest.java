@@ -54,4 +54,14 @@ class CakeServiceTest {
         assertEquals("Name is mandatory", exception.getMessage());
     }
 
+    @Test
+    void when_bake_cake_with_few_ingredients_then_throw_exception() {
+        Cake cake = new Cake();
+        cake.setName("Pumpkin Pie");
+        cake.setIngredients("flour,sugar");
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> this.service.bakeCake(cake));
+
+        assertEquals("Not enough ingredients", exception.getMessage());
+    }
+
 }
