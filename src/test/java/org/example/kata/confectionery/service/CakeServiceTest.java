@@ -1,6 +1,7 @@
 package org.example.kata.confectionery.service;
 
 import org.example.kata.confectionery.persistence.model.Cake;
+import org.example.kata.confectionery.service.exception.CakeNotBakedException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

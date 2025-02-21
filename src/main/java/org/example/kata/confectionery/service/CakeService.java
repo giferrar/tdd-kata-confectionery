@@ -2,6 +2,7 @@ package org.example.kata.confectionery.service;
 
 import org.example.kata.confectionery.persistence.model.Cake;
 import org.example.kata.confectionery.persistence.repository.CakeRepository;
+import org.example.kata.confectionery.service.exception.CakeNotBakedException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +17,6 @@ public class CakeService implements ICakeService {
 
     @Override
     public Cake getCake(long id) {
-        return cakeRepository.findById(id).get();
+        return cakeRepository.findById(id).orElseThrow(() -> new CakeNotBakedException("Cake Not Baked"));
     }
 }
