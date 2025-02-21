@@ -10,7 +10,7 @@ public class Cake {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(nullable = false)
     private Long id;
 
     @Column(nullable = false)
@@ -22,4 +22,7 @@ public class Cake {
     @Column
     private Integer calories;
 
+    public boolean isRecipeIncomplete() {
+        return ingredients == null || ingredients.isEmpty() || ingredients.split(",").length <= 3;
+    }
 }
