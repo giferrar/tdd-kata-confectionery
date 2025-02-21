@@ -26,4 +26,9 @@ public class CakeService implements ICakeService {
     public List<Cake> findCakeByIngredientsContaining(String ingredient) {
         return cakeRepository.findAllByIngredientsContaining(ingredient);
     }
+
+    @Override
+    public void bakeCake(Cake cake) {
+        throw new RuntimeException("Name is mandatory");
+    }
 }

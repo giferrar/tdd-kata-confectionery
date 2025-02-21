@@ -8,4 +8,6 @@ public interface ICakeService {
     Cake getCake(long l);
 
     List<Cake> findCakeByIngredientsContaining(String ingredient);
+
+    void bakeCake(Cake cake);
 }
