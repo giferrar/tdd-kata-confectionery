@@ -32,5 +32,6 @@ public class CakeService implements ICakeService {
         if (cake.getName() == null || cake.getName().isEmpty()) {
             throw new RuntimeException("Name is mandatory");
         }
+        throw new RuntimeException("Not enough ingredients");
     }
 }
