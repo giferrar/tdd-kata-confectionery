@@ -38,4 +38,12 @@ class CakeServiceTest {
         assertEquals("Tiramisu", cakes.get(0).getName());
     }
 
+    @Test
+    void when_find_cake_by_ingredients_with_non_existing_ingredient_then_return_empty_list() {
+        List<Cake> cakes = this.service.findCakeByIngredientsContaining("nails");
+
+        assertNotNull(cakes);
+        assertTrue(cakes.isEmpty());
+    }
+
 }
