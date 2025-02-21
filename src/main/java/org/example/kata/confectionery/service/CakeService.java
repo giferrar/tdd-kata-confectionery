@@ -15,7 +15,7 @@ public class CakeService implements ICakeService {
 
 
     @Override
-    public Cake getCake(long l) {
-        return cakeRepository.findById(l).get();
+    public Cake getCake(long id) {
+        return cakeRepository.findById(id).get();
     }
 }
