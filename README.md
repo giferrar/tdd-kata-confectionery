@@ -16,7 +16,7 @@ Here is an example of the workflow, highlighting some common mistakes:
 
 ## Project Structure
 In this exercise we will practice Test-Driven Development working on a sample project.
-In the Project is present the Object [`Cake`](src/main/java/org/example/kata/confectionery/persistence/model/Cake.java), which represents a database Entity, and its Repository [`CakeRepository`](src/main/java/org/example/kata/confectionery/repository/CakeRepository.java).
+In the Project is present the Object [`Cake`](src/main/java/org/example/kata/confectionery/persistence/model/Cake.java), which represents a database Entity, and its Repository [`CakeRepository`](src/main/java/org/example/kata/confectionery/persistence/repository/CakeRepository.java).
 
 The goal of this exercise is to implement the Service [`CakeService`](src/main/java/org/example/kata/confectionery/service/CakeService.java) using **TDD**.
 
@@ -50,7 +50,6 @@ After terminating the challenge going through the whole round of the **TDD** wor
 #### bakeCake
 1) When baking a cake with parameter `name` null or empty, an exception is thrown with message `Name is mandatory`
 2) When baking a cake with parameter `ingredients` not representing a CSV (comma separated value) with more than 3 elements, an exception is thrown with message `Not enough ingredients`
-   1) Refactoring tip: determine if the parameter `ingredients` is incomplete by writing the object method `isRecipeComplete` inside `Cake`
 3) When baking a cake with proper parameters, the cake is persisted and the saved entity is returned
 
 #### deleteCakeByName
@@ -61,7 +60,12 @@ After terminating the challenge going through the whole round of the **TDD** wor
 2) If the ID of an unhealthy Cake is given (`2`), return `0`. A Cake is unhealthy if it is not vegan. A vegan Cake does not contain neither `eggs` nor `butter`.
 3) If a non-existing ID is given, a `CakeNotBakedException` is thrown
 
-### Sources
+## Refactoring tips
+- In some cases you should extract some code from the Service into a method object belonging to the Entity. This is particularly useful regarding `if` conditions. 
+  Finding a name for the method can help you understand the state of the Entity. For example, determine if the parameter `ingredients` is incomplete by writing the object method `isRecipeComplete` inside `Cake`.
+- Remember to follow the naming convention for Unit Tests `when_a_with_b_then_c` to improve understandability of the scope of the test.
+
+## Sources
 
 - https://martinfowler.com/bliki/TestDrivenDevelopment.html,
 - https://tidyfirst.substack.com/p/canon-tdd
