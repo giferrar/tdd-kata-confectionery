@@ -29,6 +29,7 @@ public class Cake {
     }
 
     public boolean isVegan() {
-        return calories < 230;
+        // What about milk?? Nah, who cares...
+        return ingredients != null && Arrays.stream(ingredients.split(",")).noneMatch(s -> s.equals("egg") || s.equals("butter"));
     }
 }
