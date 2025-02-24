@@ -11,7 +11,7 @@ Then, we pick one use case from the list (usually starting from the most simple 
 2) _GREEN_: we write the minimal implementation to let the test pass. This does not mean the full implementation, but just what is needed to have a green bar. 
 3) _REFACTOR_: we refactor the code to complete the implementation or improve its design. This step is of course open to discussion and exchange of ideas about a proper solution.
 
-Here is an example of the workflow, highlighting some common mistakes:
+Here is an example of the workflow, highlighting in orange some common mistakes:
 ![Example of TDD Workflow, highlighting some common mistakes](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7491e124-9e22-4e55-b03b-68d76316dcba_1602x1076.jpeg "TDD Workflow")
 
 ## Project Structure
@@ -36,6 +36,7 @@ One developer plays the role of the "attacker" and is responsible for writing th
 After terminating the challenge going through the whole round of the **TDD** workflow, the two can pick another scenario from the list and swap their roles.
 
 ## Description of the Kata/Randori challenges
+Here is a description of the use cases to solve in this exercise. In the branche `Solutions` you can find a step-by-step guide on solving all Katas, going through each step of the **TDD** lifecycle.
 
 ### CakeService
 
@@ -63,7 +64,13 @@ After terminating the challenge going through the whole round of the **TDD** wor
 ## Refactoring tips
 - In some cases you should extract some code from the Service into a method object belonging to the Entity. This is particularly useful regarding `if` conditions. 
   Finding a name for the method can help you understand the state of the Entity. For example, determine if the parameter `ingredients` is incomplete by writing the object method `isRecipeComplete` inside `Cake`.
+- Do not forget to check if the name of the method parameters clearly states what they represent.
 - Remember to follow the naming convention for Unit Tests `when_a_with_b_then_c` to improve understandability of the scope of the test.
+
+## Final Thoughts
+I know this code is broken, please do not complain about `NullPointerExceptions` or similar stuff.
+
+This small project is solely intended as an exercise to learn the **TDD** workflow, not as a showcase of my development superpowers.
 
 ## Sources
 
