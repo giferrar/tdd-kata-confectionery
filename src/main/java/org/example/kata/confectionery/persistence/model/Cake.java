@@ -3,6 +3,8 @@ package org.example.kata.confectionery.persistence.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Arrays;
+
 @Entity
 @Table
 @Data
@@ -24,5 +26,9 @@ public class Cake {
 
     public boolean isRecipeIncomplete() {
         return ingredients == null || ingredients.isEmpty() || ingredients.split(",").length <= 3;
+    }
+
+    public boolean isVegan() {
+        return calories < 230;
     }
 }
