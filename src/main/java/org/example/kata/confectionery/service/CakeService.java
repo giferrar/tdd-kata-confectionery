@@ -28,12 +28,14 @@ public class CakeService implements ICakeService {
     }
 
     @Override
-    public void bakeCake(Cake cake) {
+    public Cake bakeCake(Cake cake) {
         if (cake.getName() == null || cake.getName().isEmpty()) {
             throw new RuntimeException("Name is mandatory");
         }
         if (cake.isRecipeIncomplete()) {
             throw new RuntimeException("Not enough ingredients");
         }
+
+        return this.cakeRepository.saveAndFlush(cake);
     }
 }

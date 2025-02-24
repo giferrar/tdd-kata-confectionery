@@ -9,5 +9,5 @@ public interface ICakeService {
 
     List<Cake> findCakeByIngredientsContaining(String ingredient);
 
-    void bakeCake(Cake cake);
+    Cake bakeCake(Cake cake);
 }
