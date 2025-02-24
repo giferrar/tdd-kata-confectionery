@@ -96,4 +96,9 @@ class CakeServiceTest {
         assertEquals(0, calories);
     }
 
+    @Test
+    void when_eat_cake_if_healthy_with_non_existing_cake_then_throw_exception() {
+        assertThrows(CakeNotBakedException.class, () -> this.service.eatCakeIfHealthy(999L));
+    }
+
 }
