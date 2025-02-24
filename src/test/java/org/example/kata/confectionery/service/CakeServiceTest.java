@@ -82,4 +82,11 @@ class CakeServiceTest {
         assertThrows(CakeNotBakedException.class, () -> this.service.getCake(4L));
     }
 
+    @Test
+    void when_eat_cake_if_healthy_with_healthy_cake_then_return_calories() {
+        int calories = assertDoesNotThrow(() -> this.service.eatCakeIfHealthy(5L));
+
+        assertEquals(224, calories);
+    }
+
 }
