@@ -64,4 +64,15 @@ class CakeServiceTest {
         assertEquals("Not enough ingredients", exception.getMessage());
     }
 
+    @Test
+    void when_bake_cake_with_proper_ingredients_then_return_cake() {
+        Cake cake = new Cake();
+        cake.setName("Pumpkin Pie");
+        cake.setIngredients("flour,sugar,egg,pumpkin");
+        Cake persistedCake = assertDoesNotThrow(() -> this.service.bakeCake(cake));
+
+        assertNotNull(persistedCake);
+        assertNotNull(persistedCake.getId());
+    }
+
 }
