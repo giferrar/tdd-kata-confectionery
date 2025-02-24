@@ -75,4 +75,11 @@ class CakeServiceTest {
         assertNotNull(persistedCake.getId());
     }
 
+    @Test
+    void when_delete_cake_by_name_then_cake_is_deleted() {
+        assertDoesNotThrow(() -> this.service.getCake(4L));
+        this.service.deleteCakeByName("Strawberry Cake");
+        assertThrows(CakeNotBakedException.class, () -> this.service.getCake(4L));
+    }
+
 }
