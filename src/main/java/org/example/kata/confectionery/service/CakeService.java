@@ -40,7 +40,7 @@ public class CakeService implements ICakeService {
     }
 
     @Override
-    public void deleteCakeByName(String strawberryCake) {
-        this.cakeRepository.deleteByNameIs(strawberryCake);
+    public void deleteCakeByName(String cakeName) {
+        this.cakeRepository.deleteByNameIs(cakeName);
     }
 }
