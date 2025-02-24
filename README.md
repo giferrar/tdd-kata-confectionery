@@ -53,7 +53,7 @@ After terminating the challenge going through the whole round of the **TDD** wor
 3) When baking a cake with proper parameters, the cake is persisted and the saved entity is returned
 
 #### deleteCakeByName
-1) When deleting a cake with name `Strawberry Cake`, then a cake with ID `4` is cannot be found
+1) When deleting a cake with name `Strawberry Cake`, then a cake with ID `4` cannot be found
 
 #### eatCakeIfHealthy
 1) If the ID of a healthy Cake is given (`5`), return the number of calories (`224`)
