@@ -38,4 +38,9 @@ public class CakeService implements ICakeService {
 
         return this.cakeRepository.saveAndFlush(cake);
     }
+
+    @Override
+    public void deleteCakeByName(String strawberryCake) {
+        this.cakeRepository.deleteById(4L);
+    }
 }

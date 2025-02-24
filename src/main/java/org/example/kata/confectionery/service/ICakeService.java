@@ -10,4 +10,6 @@ public interface ICakeService {
     List<Cake> findCakeByIngredientsContaining(String ingredient);
 
     Cake bakeCake(Cake cake);
+
+    void deleteCakeByName(String strawberryCake);
 }
