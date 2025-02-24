@@ -12,4 +12,6 @@ public interface ICakeService {
     Cake bakeCake(Cake cake);
 
     void deleteCakeByName(String strawberryCake);
+
+    Integer eatCakeIfHealthy(long l);
 }

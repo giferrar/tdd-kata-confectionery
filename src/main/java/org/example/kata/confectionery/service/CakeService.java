@@ -43,4 +43,9 @@ public class CakeService implements ICakeService {
     public void deleteCakeByName(String cakeName) {
         this.cakeRepository.deleteByNameIs(cakeName);
     }
+
+    @Override
+    public Integer eatCakeIfHealthy(long l) {
+        return 224;
+    }
 }
