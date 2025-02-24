@@ -45,7 +45,7 @@ public class CakeService implements ICakeService {
     }
 
     @Override
-    public Integer eatCakeIfHealthy(long l) {
-        return this.cakeRepository.findById(l).get().getCalories();
+    public Integer eatCakeIfHealthy(long id) {
+        return this.cakeRepository.findById(id).get().getCalories();
     }
 }
