@@ -46,7 +46,7 @@ public class CakeService implements ICakeService {
 
     @Override
     public Integer eatCakeIfHealthy(long id) {
-        Cake cake = this.cakeRepository.findById(id).get();
+        Cake cake = this.cakeRepository.findById(id).orElseThrow(() -> new CakeNotBakedException("Cake with ID %s not baked".formatted(id)));
         return cake.isVegan() ? cake.getCalories() : 0;
     }
 }
